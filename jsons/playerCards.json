@@ -1506,7 +1506,7 @@
                             ["IS_ONE_RING_READY"]
                         ],
                         "then": [
-                            ["VAR", "$HERO", "GET_ONE_RING_PARENT"],
+                            ["VAR", "$HERO", ["GET_ONE_RING_PARENT"]],
                             ["LOG", "└── ", ["GET_ALIAS", "$THIS.controller"], " exhausted The One Ring and raised threat by 1 to heal all damage from ", "$HERO.currentFace.name", "."],
                             ["EXHAUST_ONE_RING"],
                             ["INCREASE_VAL", "/playerData/{{$THIS.controller}}/threat", 1],

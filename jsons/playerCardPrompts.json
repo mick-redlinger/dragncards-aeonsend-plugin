@@ -619,8 +619,8 @@
                                     ["COND",
                                         ["EQUAL", "$PROMPT_CARD.groupId", "{{$CONTROLLER}}Hand"],
                                         [
-                                            ["ADD_TEMP_TOKEN", "phase", "$PARENT", "defense", 1],
-                                            ["LOG", "{{$ALIAS_N}} discarded ", "$PROMPT_CARD.currentFace.name", " to add +1 defense to ", "$GAME.cardById.$PARENT.currentFace.name", "."],
+                                            ["ADD_TEMP_TOKEN", "phase", "$PARENT_CARD_ID", "defense", 1],
+                                            ["LOG", "{{$ALIAS_N}} discarded ", "$PROMPT_CARD.currentFace.name", " to add +1 defense to ", "$GAME.cardById.$PARENT_CARD_ID.currentFace.name", "."],
                                             ["DISCARD_CARD", "$PROMPT_CARD"]
                                         ],
                                         ["TRUE"],
