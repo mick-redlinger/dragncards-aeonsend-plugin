@@ -1564,7 +1564,7 @@
                         ],
                         [
                             ["TOGGLE_EXHAUST", "$THIS"],
-                            ["LOG", "└── ", "Added 2 resources to ", "$GAME.cardById.{{$THIS.parentCardId}}.currentFace.name", "."],
+                            ["LOG", "└── ", "Added 2 resource to ", "$GAME.cardById.{{$THIS.parentCardId}}.currentFace.name", "."],
                             ["INCREASE_VAL", "/cardById/$THIS.parentCardId/tokens/resource", 2],
                             ["FADE_TEXT_CARD", "$THIS.parentCardId", "+2 token:resource"]
                         ],
@@ -1882,7 +1882,7 @@
                     "A": ["COND",
                         ["AND", 
                             ["GREATER_THAN", "$THIS.cardIndex", 0],
-                            ["GREATER_THAN", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resources", 0]
+                            ["GREATER_THAN", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resource", 0]
                         ],
                         [
                             ["LOG", "└── ", "Spent 1 resource to add 1 willpower to ", "$GAME.cardById.{{$THIS.parentCardId}}.currentFace.name", " until the end of the phase."],
@@ -1900,10 +1900,10 @@
                     "A": ["COND",
                         ["AND", 
                             ["GREATER_THAN", "$THIS.cardIndex", 0],
-                            ["GREATER_THAN", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resources", 0]
+                            ["GREATER_THAN", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resource", 0]
                         ],
                         [
-                            ["VAR", "$RESOURCE_COUNT", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resources"],
+                            ["VAR", "$RESOURCE_COUNT", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resource"],
                             ["DECREASE_VAR", "$RESOURCE_COUNT", 1],
                             ["LOG", "└── ", "Spent 1 resource to add {{$RESOURCE_COUNT}} attack to ", "$GAME.cardById.{{$THIS.parentCardId}}.currentFace.name", " until the end of the phase."],
                             ["DECREASE_VAL", "/cardById/$THIS.parentCardId/tokens/resource", 1],
@@ -1920,10 +1920,10 @@
                     "A": ["COND",
                         ["AND", 
                             ["GREATER_THAN", "$THIS.cardIndex", 0],
-                            ["GREATER_THAN", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resources", 0]
+                            ["GREATER_THAN", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resource", 0]
                         ],
                         [
-                            ["VAR", "$RESOURCE_COUNT", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resources"],
+                            ["VAR", "$RESOURCE_COUNT", "$GAME.cardById.{{$THIS.parentCardId}}.tokens.resource"],
                             ["DECREASE_VAR", "$RESOURCE_COUNT", 1],
                             ["LOG", "└── ", "Spent 1 resource to add {{$RESOURCE_COUNT}} defense to ", "$GAME.cardById.{{$THIS.parentCardId}}.currentFace.name", " until the end of the phase."],
                             ["DECREASE_VAL", "/cardById/$THIS.parentCardId/tokens/resource", 1],
