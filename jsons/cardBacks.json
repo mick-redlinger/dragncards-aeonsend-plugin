@@ -1,6 +1,10 @@
 {
     "cardBacks": {
-        "encounter": {"width": 0.72, "height": 1.0, "imageUrl": "https://dragncards-lotrlcg.s3.amazonaws.com/cardbacks/encounter.jpg"},
-        "player": {"width": 0.72, "height": 1.0, "imageUrl": "https://dragncards-lotrlcg.s3.amazonaws.com/cardbacks/player.jpg"}
+        "nemesis": {"width": 0.72, "height": 1.0, "imageUrl": "https://dragncards-lotrlcg.s3.amazonaws.com/cardbacks/encounter.jpg"},
+        "player": {"width": 0.72, "height": 1.0, "imageUrl": "https://dragncards-lotrlcg.s3.amazonaws.com/cardbacks/player.jpg"},
+        "rageborne": {"width": 1.44, "height": 2.0, "imageUrl": "https://static.wikia.nocookie.net/aeonsend/images/7/7d/RageborneBack.jpg"},
+        "carapaceQueen": {"width": 1.44, "height": 2.0, "imageUrl": "https://static.wikia.nocookie.net/aeonsend/images/1/12/CarapaceQueenBack.jpg"},
+        "crookedMask": {"width": 1.44, "height": 2.0, "imageUrl": "https://static.wikia.nocookie.net/aeonsend/images/a/a7/CrookedMaskBack.png"},
+        "princeOfGluttons": {"width": 1.44, "height": 2.0, "imageUrl": "https://static.wikia.nocookie.net/aeonsend/images/9/98/PrinceOfGluttonsBack.jpg"}
     }
 }
