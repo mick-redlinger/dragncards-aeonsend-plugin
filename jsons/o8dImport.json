@@ -6,15 +6,8 @@
             "Attachment": "playerNDeck",
             "Event": "playerNDeck",
             "Side Quest": "playerNDeck",
-            "Sideboard": "playerNSideboard",
-            "Quest": "sharedQuestDeck",
             "Encounter": "sharedEncounterDeck",
-            "Special": "sharedEncounterDeck2",
-            "Second Special": "sharedEncounterDeck3",
-            "Setup": "sharedSetAside",
-            "Staging Setup": "sharedStagingArea",
-            "Active Setup": "sharedActiveLocation",
-            "Second Quest Deck": "sharedQuestDeck2"
+            "Staging Setup": "sharedNemesisZone"
         },
         "otherSectionLoadGroupId": "sharedOther"
     }

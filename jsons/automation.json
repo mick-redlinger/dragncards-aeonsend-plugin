@@ -44,10 +44,6 @@
                     ]
                 ],
                 ["COND",
-                    ["EQUAL", "$CARD.groupId", "sharedEncounterDeck2"],
-                    ["UPDATE_VAR", "$LOADED_ENCOUNTER_DECK_2", true]
-                ],
-                ["COND",
                     ["EQUAL", "$CARD.groupId", "sharedBoons"],
                     ["UPDATE_VAR", "$LOADED_BOONS", true]
                 ],

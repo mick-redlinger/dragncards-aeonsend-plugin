@@ -1,5 +1,20 @@
 {
     "actionLists": {
+		"advanceBreach": [
+			["ADVANCE_BREACH", "$ACTIVE_CARD"]
+		],
+		"breach1": [
+			["MOVE_TO_BREACH", "$ACTIVE_CARD", 1]
+		],
+		"breach2": [
+			["MOVE_TO_BREACH", "$ACTIVE_CARD", 2]
+		],
+		"breach3": [
+			["MOVE_TO_BREACH", "$ACTIVE_CARD", 3]
+		],
+		"breach4": [
+			["MOVE_TO_BREACH", "$ACTIVE_CARD", 4]
+		],
         "skipToNextPlanningPhase": [
             ["END_THE_QUEST_PHASE"],
             ["VAR", "$STEP_ID", "$GAME.stepId"],

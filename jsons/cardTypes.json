@@ -1,14 +1,17 @@
 {
     "cardTypes": {
-        "Gem":           {"width": 0.72, "height": 1.0, "tokens": ["resource","progress","damage","time","willpower","attack","defense","hitPoints","questing"]},
-        "Spell":     {"width": 0.72, "height": 1.0, "tokens": ["resource","progress","damage","time","willpower","attack","defense","hitPoints","questing"]},
-        "Relic":          {"width": 0.72, "height": 1.0, "tokens": ["resource","progress","damage","time","willpower","attack","defense","hitPoints","questing"]},
-        "Nemesis":           {"width": 1.44, "height": 2.0, "tokens": ["resource","progress","damage","time","willpower","attack","defense","hitPoints","questing"]},
-        "Supplemental":       {"width": 1.44, "height": 2.0, "tokens": ["resource","progress","damage","time","willpower","attack","defense","hitPoints","questing"]},
-        "Minion": {"width": 0.72, "height": 1.0, "tokens": ["resource","progress","damage","time","willpower","attack","defense","hitPoints","questing"]},
-        "Attack": {"width": 0.72, "height": 1.0, "tokens": ["resource","progress","damage","time","willpower","attack","defense","hitPoints","questing"]},
-        "Power":      {"width": 0.72, "height": 1.0, "tokens": ["resource","progress","damage","time","threat","attack","defense","hitPoints","questing"]},
-        "Corruption":       {"width": 0.72, "height": 1.0, "tokens": ["resource","progress","damage","time","threat","attack","defense","hitPoints","questing"]},
-        "Strike":          {"width": 0.72, "height": 1.0, "tokens": ["engagementCost","resource","progress","damage","time","threat","attack","defense","hitPoints","questing"]}
+        "Gem":           {"width": 0.72, "height": 1.0},
+        "Spell":     {"width": 0.72, "height": 1.0},
+        "Relic":          {"width": 0.72, "height": 1.0},
+        "Nemesis":           {"width": 1.44, "height": 2.0, "tokens": ["nemesis"]},
+        "Supplemental":       {"width": 1.44, "height": 2.0, "tokens": ["nemesis"]},
+		"Mage":       {"width": 1.44, "height": 1.0, "tokens": ["life","charge","aether"]},
+        "Minion": {"width": 0.72, "height": 1.0, "tokens": ["life"]},
+        "Attack": {"width": 0.72, "height": 1.0},
+        "Power":      {"width": 0.72, "height": 1.0, "tokens": ["power"]},
+        "Corruption":       {"width": 0.72, "height": 1.0},
+        "Strike":          {"width": 0.72, "height": 1.0},
+		"Breach":          {"width": 0.72, "height": 0.72},
+		"TurnOrder":          {"width": 0.72, "height": 1.0}
     }
 }

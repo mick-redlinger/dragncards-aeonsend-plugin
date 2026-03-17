@@ -1,5 +1,93 @@
 {
     "functions": {
+		"SET_BREACH": {
+          "args": ["$CARD_ID", "$ORIENTATION"],
+          "code": [
+			["LOG", "Attempting to set breach {{$CARD_ID}} to {{$ORIENTATION}} "],
+			["COND",
+				["EQUAL", "$ORIENTATION", "O"],
+				[
+					["SET", "/cardById/$CARD_ID/currentSide", "A"],
+					["SET", "/cardById/$CARD_ID/rotation", 0]
+				],
+				["EQUAL", "$ORIENTATION", "L"],
+				[
+					["SET", "/cardById/$CARD_ID/currentSide", "B"],
+					["SET", "/cardById/$CARD_ID/rotation", 90]
+				],
+				["EQUAL", "$ORIENTATION", "R"],
+				[
+					["SET", "/cardById/$CARD_ID/currentSide", "B"],
+					["SET", "/cardById/$CARD_ID/rotation", 270]
+				],
+				["EQUAL", "$ORIENTATION", "U"],
+				[
+					["SET", "/cardById/$CARD_ID/currentSide", "B"],
+					["SET", "/cardById/$CARD_ID/rotation", 180]
+				],
+				["EQUAL", "$ORIENTATION", "D"],
+				[
+					["SET", "/cardById/$CARD_ID/currentSide", "B"],
+					["SET", "/cardById/$CARD_ID/rotation", 0]
+				]
+			]
+          ]
+        },
+		"SET_STANDARD_BREACHES": {
+          "args": ["$ORIENTATION_2", "$ORIENTATION_3", "$ORIENTATION_4"],
+          "code": [
+			["LOG", "Setting Standard Breaches O {{$ORIENTATION_2}} {{$ORIENTATION_3}} {{$ORIENTATION_4}}"],
+			["VAR", "$BREACH2", ["GET_CARD_ID", "{{$PLAYER_N}}Breach2", 0,0]],
+			["VAR", "$BREACH3", ["GET_CARD_ID", "{{$PLAYER_N}}Breach3", 0,0]],
+			["VAR", "$BREACH4", ["GET_CARD_ID", "{{$PLAYER_N}}Breach4", 0,0]],
+			["SET_BREACH", "$BREACH2", "$ORIENTATION_2"],
+			["SET_BREACH", "$BREACH3", "$ORIENTATION_3"],
+			["SET_BREACH", "$BREACH4", "$ORIENTATION_4"]
+          ]
+        },
+		"ADVANCE_BREACH": {
+          "args": ["$CARD"],
+          "code": [
+			["LOG", "Attempting to advance card of type: {{$CARD.sides.A.type}}."],
+			["COND",
+				["EQUAL", "$CARD.sides.A.type", "Breach"],
+				["COND",
+					["EQUAL", ["MODULO", "$CARD.rotation", 360], 180],
+					[
+						["SET", "/cardById/$ACTIVE_CARD_ID/currentSide", "A"],
+						["SET", "/cardById/$CARD.id/rotation", 0]
+					],
+					["EQUAL", "$CARD.currentSide", "B"],
+					["SET", "/cardById/$CARD.id/rotation", ["CALC", "{{$CARD.rotation}} + 90"]]
+				]
+			]
+          ]
+        },
+		"MOVE_TO_BREACH": {
+          "args": ["$CARD", "$BREACH_NUMBER"],
+          "code": [
+			["VAR", "$ACTIVE_GROUP_ID", "$ACTIVE_CARD.groupId"],
+			["COND",
+				["NOT_EQUAL", "$GAME.groupById.$ACTIVE_GROUP_ID.groupType", "hand"],
+				["LOG", "Can only move cards in hand to a breach"],
+				["GREATER_EQUAL",["LENGTH", "$GAME.groupById.{{$PLAYER_N}}Breach{{$BREACH_NUMBER}}.stackIds"], 2],
+				["LOG", "Breach already full"],
+				["NOT_EQUAL", "$ACTIVE_FACE.type", "Spell"],
+				["LOG", "Can only move spell cards to Breach"],
+				true,
+				[
+					["LOG", "Moving {{$CARD.name}} to breach {{$BREACH_NUMBER}}."],
+					["MOVE_CARD", "$ACTIVE_CARD.id", "{{$PLAYER_N}}Breach{{$BREACH_NUMBER}}", 0]
+				]
+			]
+          ]
+        },
+		"CAST_FROM_BREACH": {
+          "args": ["$CARD"],
+          "code": [
+			["LOG", "Attempting to discard card from breach."]
+          ]
+        },
         "ADVANCE_THROUGH_ROUND_BUT_STOP_AT_TRIGGERS": {
           "args": ["$STOP_STEP_ID"],
           "code": [
@@ -385,10 +473,20 @@
           ]
         },
         "POST_SET_LAYOUT": {
-          "args": [],
+          "args": ["$NUM_PLAYERS"],
           "code": [
+		    ["BUILD_TURN_DECK", "$NUM_PLAYERS"],
             ["UPDATE_ADVANCE_BUTTON"],
             ["UPDATE_HELPER_TEXT_VISIBILITY"]
+          ]
+        },
+		"BUILD_TURN_DECK": {
+          "args": ["$NUM_PLAYERS"],
+          "code": ["COND",
+            ["EQUAL", "$NUM_PLAYERS", 1],
+            ["LOG", "/layout/textBoxes/roundAdvancement/visible"],
+            ["TRUE"],
+            ["LOG", "/layout/textBoxes/roundAdvancement/visible"]
           ]
         },
         "UPDATE_HELPER_TEXT_VISIBILITY": {

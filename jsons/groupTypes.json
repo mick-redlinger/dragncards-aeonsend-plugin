@@ -3,7 +3,7 @@
         "deck": {
             "canHaveAttachments": false,
             "canHaveTokens": false,
-            "shuffleOnLoad": true,
+            "shuffleOnLoad": false,
             "onCardEnter": {
                 "currentSide": "B",
                 "inPlay": false,
@@ -36,6 +36,24 @@
                 "committed": false
             }
         },
+        "breach": {
+            "canHaveAttachments": false,
+            "canHaveTokens": false,
+            "shuffleOnLoad": false,
+            "onCardEnter": {
+                "currentSide": "A",
+                "inPlay": true
+            }
+		},
+		"mage": {
+            "canHaveAttachments": false,
+            "canHaveTokens": false,
+            "shuffleOnLoad": false,
+            "onCardEnter": {
+                "currentSide": "A",
+                "inPlay": true
+            }
+		},
         "inPlay": {
             "canHaveAttachments": true,
             "canHaveTokens": true,

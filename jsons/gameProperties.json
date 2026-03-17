@@ -1,45 +1,7 @@
 {
     "gameProperties": {
-      "stagingThreat": {
-        "label": "id:stagingThreat",
-        "type": "integer", 
-        "default": 0
-      },
-      "questProgress": {
-        "label": "id:questProgress",
-        "type": "integer",
-        "default": 0
-      },
-      "questingStat": {
-        "label": "id:questingStat",
-        "type": "option", 
-        "default": "willpower", 
-        "options": [
-          {
-              "id": "willpower",
-              "label": "id:willpower"
-          },
-          {
-              "id": "attack",
-              "label": "id:attack"
-          },
-          {
-              "id": "defense",
-              "label": "id:defense"
-          },
-          {
-              "id": "hitpoints",
-              "label": "id:hitpoints"
-          }
-        ]
-      },
       "allPlayerDecksLoaded": {
         "label": "id:allPlayerDecksLoaded",
-        "type": "boolean",
-        "default": false
-      },
-      "encounterDeckLoaded": {
-        "label": "id:encounterDeckLoaded",
         "type": "boolean",
         "default": false
       },
@@ -52,6 +14,16 @@
         "label": "id:gameStepAutomation",
         "type": "boolean",
         "default": true
+      },
+	  "nemsisHealth": {
+        "label": "id:nemesisHealth",
+        "type": "integer",
+        "default": 50
+      },
+	  "graveholdHealth": {
+        "label": "id:graveholdHealth",
+        "type": "integer",
+        "default": 30
       }
     }
 }
